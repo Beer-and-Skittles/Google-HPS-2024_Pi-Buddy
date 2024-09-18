@@ -3,8 +3,8 @@
 ## Introduction
 PiBuddy is a companion robot designed to assist you in daily tasks and keep you company. It features a variety of useful functions, such as a clock, timer, camera for taking photos and recording videos, and a to-do list to help you manage your day.
 
-| ![robot image](assets/robot.png)  | ![robot disassembled image](assets/robot_disassembled.png)  |
-|-----------------------------------|-------------------------------------------------------------|
+![robot image](assets/robot.png) 
+![robot disassembled image](assets/robot_disassembled.png) 
 
 ### Key Features:
 * **Clock and Timer**
