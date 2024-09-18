@@ -3,6 +3,9 @@
 ## Introduction
 PiBuddy is a companion robot designed to assist you in daily tasks and keep you company. It features a variety of useful functions, such as a clock, timer, camera for taking photos and recording videos, and a to-do list to help you manage your day.
 
+| ![robot image](assets/robot.png)  | ![robot disassembled image](assets/robot_disassembled.png)  |
+|-----------------------------------|-------------------------------------------------------------|
+
 ### Key Features:
 * **Clock and Timer**
 
@@ -27,7 +30,7 @@ PiBuddy is a companion robot designed to assist you in daily tasks and keep you 
 PiBuddy serves as both a reliable productivity assistant and a friendly companion to help you manage your tasks and brighten your day.
 
 ## Hardware Components
-![hardware block diagram](assets/img/hardware_block.png)
+![hardware block diagram](assets/hardware.png)
 
 *hardware block diagram of PiBuddy*
 
@@ -77,7 +80,7 @@ PiBuddy's software architecture is designed to ensure that its various hardware 
 
     Instead of treating each hardware component individually, we grouped components that work closely together into larger units. For example, the motor and sensor systems are controlled by a unified handler. Each handler class is responsible for managing the driving code of its respective component group, making the architecture more modular and easier to maintain.
 
-    ![handlers](assets/img/handlers.png)
+    ![handlers](assets/handlers.png)
 
     *handlers and their hardwre drivers*
 
@@ -85,7 +88,7 @@ PiBuddy's software architecture is designed to ensure that its various hardware 
     
     Through careful mapping of the component interactions, we discovered that the relationship between hardware groups is best represented as a complex graph rather than a simple ancestor-to-child tree. This architecture allows for flexible communication and coordination between the components, avoiding rigid hierarchies that would limit PiBuddy’s interactivity.
 
-    ![io relationship between main comonent groups](assets/img/io_relationship.png)
+    ![io relationship between main comonent groups](assets/io.png)
 
     *io relationship between main component groups*
 
@@ -93,7 +96,7 @@ PiBuddy's software architecture is designed to ensure that its various hardware 
     
     To simplify communication between handlers, we designed a standardized task management system. The Task Manager acts as a central bus, routing tasks between handlers. This eliminates the need for custom handling logic for each communication pathway, ensuring that all components can easily share information through a unified protocol.
 
-    ![handler and task manager system](assets/img/task_manager.png)
+    ![handler and task manager system](assets/task_manager.png)
 
     *the standardized handler and task manager system*
 
@@ -129,7 +132,7 @@ The Widget Handler uses a multiprocess- and multithread-safe pointer to track th
 
 In the case of a page switch, the current page’s display loop is gracefully terminated via its handle_task() method. The switch signal is returned to the Widget Handler, which takes several steps: it updates the pointer to the next page, calls the reset_state() method on the new page to prepare its internal state, and then starts the new page’s display loop.
 
-![the page switching mechanism](assets/img/page_switching.png)
+![the page switching mechanism](assets/page_switch.png)
 
 *the page switching mechanism*
 
